@@ -2,6 +2,7 @@ from PIL import Image
 from subprocess import call
 
 def resize(path):
+    # this is arbitrary, tune later
     basewidth = 400
     try:
         img = Image.open(path)
