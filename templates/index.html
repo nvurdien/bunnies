@@ -1,68 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--external files or metadata here-->
-    <link rel="stylesheet" href="/kube/css/kube.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/kube/css/navbar.css">
-    <title>Bunny Page</title><!--Title of the page usually appears on tab-->
-  </head>
-  <body>
-    <div class="wrapper main">
-    <div id="left-flyout-nav" class="layout-left-flyout visible-sm"></div>
- <div class="layout-right-content">
-   <header class="the-header" role="banner">
-     <div class="navbar container">
-
-       <!-- Trigger -->
-       <div class="units-row end">
-         <div class="mobile-20">
-           <a class="btn-navbar btn-navbar-navtoggle btn-flyout-trigger" href="#">
-
-             <i class="fa fa-bars fa-2x icon-menu"></i>
-             <span class="sr-only">Menu</span>
-
-             <!-- <span class="icon-bar btn-flyout-trigger"></span>
-             <span class="icon-bar btn-flyout-trigger"></span>
-             <span class="icon-bar btn-flyout-trigger"></span> -->
-
-           </a>
-         </div>
-       </div>
-       <div class="units-row end pull-right">
-         <div id="header-logo" class="unit-60 end">
-           <h1 id="logo">Responsive Navigation</h1>
-         </div>
-       </div>
-       <!-- Structure -->
-       <nav class="the-nav nav-collapse clearfix" role="navigation">
-         <ul class="nav nav-pill pull-right">
-           <li><a href="#">Home</a></li>
-           <li><a href="#">About</a></li>
-           <li><a href="#">Breeds</a></li>
-       </nav>
-     </div>
-   </header>
-      <div class="row">
-          <div class="col col-11 push-middle push-center text-center">
-          <h1>dis is where we keepies bun buns</h1>
-          <div class="col col-11 push-middle push-right text-center">
-          <BR><img src=""> <BR>image here<BR>
-          <form method="post" action="" class="form">
-              <div class="form-item"><label>Rabbit Breed</label>
-                  <div class="append w50 push-center">
-                      <input type="text" name="breed_name" placeholder="breed name"><button class="button outline"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-                </div>
-              </div>
-          </form>
-          </div>
+{% extends "layout.html" %}
+{% block body %}
+<div class="col col-12 push-middle push-center text-center">
+  <h1>dis is where we keepies bun buns</h1>
+  <img src=""> <BR>image here<BR>
+  <form method="post" action="" class="form">
+      <div class="form-item"><label>Rabbit Breed</label>
+          <div class="append w50 push-center">
+              <input type="text" name="breed_name" placeholder="breed name"><button class="button outline"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
       </div>
-
-      </div>
-    </div>
-  </body>
-  <script src="/kube/js/kube.min.js"></script>
-  <script src="/kube/js/navbar.js"></script>
-</html>
+  </form>
+</div>
+  {% endblock %}
