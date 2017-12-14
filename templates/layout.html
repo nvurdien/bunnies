@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/kube.min.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
+    <script src="js/kube.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/mlpushmenu.js"></script>
     <title>Bunny-Net</title><!--Title of the page usually appears on tab-->
   </head>
   <body>
@@ -29,20 +32,17 @@
 				</nav>
         <div class="scroller">
           <div class="scroller-inner">
-            <header>
+            <header id="headernavbar">
               <div class="block block-40 clearfix">
-                <div id="mobile-header" class="mobile-only">
-                  <p style="display:inline">
-                    <a href="#" id="trigger" class="mobile-only">
-                      <i class="fa fa-bars" aria-hidden="true"></i>
-                    </a>
-                    Bunny-Net
-                  </p>
-                </div>
-                <div id="brand-name" class="desktop-only pull-left">
+                <div id="brand-name" style="float:left">
                   <p>Bunny-Net</p>
                 </div>
-                <div id="navigation" class="desktop-only pull-right">
+                <div id="mobile-header" class="mobile-only" style="float:right">
+                    <p><a href="#" id="trigger">
+                      <i class="fa fa-bars" aria-hidden="true"></i>
+                    </a></p>
+                </div>
+                <div id="navigation" class="desktop-only float-right">
                   <p><a href="/">Home</a> / <a href="/about">About Us</a> / <a href="/breeds">Breeds</a></p>
                 </div>
               </div>
@@ -53,10 +53,12 @@
       </div>
     </div>
   </body>
-  <script src="/js/kube.min.js"></script>
-  <script src="js/classie.js"></script>
-  <script src="js/mlpushmenu.js"></script>
   <script>
-    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+    new mlPushMenu(document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ));
+    new Kube.Tabs(document.getElementById('livetabs1'));
+    new Kube.Tabs(document.getElementById('livetabs2'));
+    new Kube.Tabs(document.getElementById('livetabs3'));
+    new Kube.Collapse(document.getElementById('my-collapse-api'));
+    
   </script>
 </html>

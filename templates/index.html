@@ -1,13 +1,24 @@
 {% extends "layout.html" %}
 {% block body %}
+
+<div class="jumbotron text-center">
+  <div class="overlay">
+    <h1>dis is where we keepies bun buns</h1>
+    <p>Guess what breed these bunnies are!</p>
+  </div>
+</div>
 <div class="col col-12 push-middle push-center text-center">
-  <h1>dis is where we keepies bun buns</h1>
-  <img src=""> <BR>image here<BR>
+  <BR><BR>
+  <figure>
+    <img src="image.jpg">
+    <figcaption>A little blurb</figcaption>
+  </figure>
+  <BR>
   <form method="post" action="" class="form">
-      <div class="form-item"><label>Rabbit Breed</label>
+      <div class="form-item">
           <div class="append w50 push-center">
-              <input type="text" name="breed_name" placeholder="breed name"><button class="button outline"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-        </div>
+              <input type="text" name="breed_name" placeholder="Breed Name Guess"><button class="button outline"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
       </div>
   </form>
 </div>

@@ -1,7 +1,74 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="col col-12 push-middle push-center text-center">
-  <h1>Breeds page</h1>
-   
+<div class="jumbotron text-center">
+  <div class="overlay">
+    <h1>List of Breeds</h1>
+    <p>These are the breeds that our site recognizes!</p>
+  </div>
 </div>
+<div class="col col-10 push-middle push-center">
+  <div id="my-collapse-api" class="my-collapse" data-component="collapse" data-loaded="true">
+        <h4><a href="#collapse-box-1" class="collapse-toggle" rel="#collapse-box-1">Item 1</a></h4>
+        <div class="collapse-box open" id="collapse-box-1" style="">
+          <img src="https://www.petakids.com/wp-content/uploads/2015/11/Baby-Bunny.jpg" width="30%" height="auto">
+          <div class="inner-collapse-box">
+              <nav id="livetabs1" class="livetabs" data-component="tabs" data-loaded="true">
+                <ul>
+                  <li class="active"><a href="#item1-general" rel="#item1-general">General</a></li>
+                  <li class=""><a href="#item1-additional" rel="#item1-additional">Additional</a></li>
+                </ul>
+              </nav>
+              <div id="item1-general" data-title="General" class="tab-live open">
+                  <h5>General</h5>
+                  <p>This is very General Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div id="item1-additional" data-title="Additional" class="tab-live hide">
+                  <h5>Additional</h5>
+                  <p>Quite an additional is displayed here: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+          </div>
+        </div>
+        <h4><a href="#collapse-box-2" class="collapse-toggle" rel="#collapse-box-2">Item 2</a></h4>
+        <div class="collapse-box hide" id="collapse-box-2" style="">
+          <img src="https://www.petakids.com/wp-content/uploads/2015/11/Baby-Bunny.jpg" width="30%" height="auto">
+          <div class="inner-collapse-box">
+            <nav id="livetabs2" class="livetabs" data-component="tabs" data-loaded="true" >
+              <ul>
+                <li class="active"><a href="#item2-general" rel="#item2-general">General</a></li>
+                <li class=""><a href="#item2-additional" rel="#item2-additional">Additional</a></li>
+              </ul>
+            </nav>
+            <div id="item2-general" data-title="General" class="tab-live open">
+                <h5>General</h5>
+                <p>This is very General Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div id="item2-additional" data-title="Additional" class="tab-live hide">
+                <h5>Additional</h5>
+                <p>Quite an additional is displayed here: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+        <h4><a href="#collapse-box-3" class="collapse-toggle" rel="#collapse-box-3">Item 3</a></h4>
+        <div class="collapse-box hide" id="collapse-box-3" style="">
+          <img src="https://www.petakids.com/wp-content/uploads/2015/11/Baby-Bunny.jpg" width="30%" height="auto">
+          <div class="inner-collapse-box">
+            <nav id="livetabs3" class="livetabs" data-component="tabs" data-loaded="true" >
+              <ul>
+                <li class="active"><a href="#item3-general" rel="#item3-general">General</a></li>
+                <li class=""><a href="#item3-additional" rel="#item3-additional">Additional</a></li>
+              </ul>
+            </nav>
+            <div id="item3-general" data-title="General" class="tab-live open">
+                <h5>General</h5>
+                <p>This is very General Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div id="item3-additional" data-title="Additional" class="tab-live hide">
+                <h5>Additional</h5>
+                <p>Quite an additional is displayed here: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
