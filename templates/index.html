@@ -7,19 +7,21 @@
     <p>Guess what breed these bunnies are!</p>
   </div>
 </div>
-<div class="col col-12 push-middle push-center text-center">
-  <BR><BR>
-  <figure>
-    <img src="image.jpg">
-    <figcaption>A little blurb</figcaption>
-  </figure>
-  <BR>
-  <form method="post" action="" class="form">
+<div class="w100 w100-sm text-center">
+  <div class="col col-11 push-center">
+    <BR>
+    <form method="post" action="" class="form" style="margin-left:10%; margin-right:10%;">
+      <figure>
+        <img src="image.jpg">
+        <figcaption>A little blurb</figcaption>
+      </figure>
+      <BR>
       <div class="form-item">
-          <div class="append w50 push-center">
+          <div class="append">
               <input type="text" name="breed_name" placeholder="Breed Name Guess"><button class="button outline"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
       </div>
-  </form>
+    </form>
+  </div>
 </div>
   {% endblock %}

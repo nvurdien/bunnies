@@ -4,16 +4,16 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
 ;( function( window ) {
-	
+
 	'use strict';
 
 	function extend( a, b ) {
-		for( var key in b ) { 
+		for( var key in b ) {
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -57,9 +57,10 @@
 		return e.parentNode && closest( e.parentNode, classname );
 	}
 
-	function mlPushMenu( el, trigger, options ) {	
+	function mlPushMenu( el, trigger, close, options ) {
 		this.el = el;
 		this.trigger = trigger;
+		this.close = close;
 		this.options = extend( this.defaults, options );
 		// support 3d transforms
 		this.support = Modernizr.csstransforms3d;
@@ -126,7 +127,14 @@
 						}
 					} );
 				}
-			} );
+			});
+			this.close.addEventListener( this.eventtype, function( ev ) {
+				ev.stopPropagation();
+				ev.preventDefault();
+				if(self.open){
+					self._resetMenu();
+				}
+			});
 
 			// opening a sub level menu
 			this.menuItems.forEach( function( el, i ) {
@@ -169,7 +177,7 @@
 						self.level === 0 ? self._resetMenu() : self._closeMenu();
 					}
 				} );
-			} );	
+			} );
 		},
 		_openMenu : function( subLevel ) {
 			// increment level depth
@@ -178,7 +186,7 @@
 			// move the main wrapper
 			var levelFactor = ( this.level - 1 ) * this.options.levelSpacing,
 				translateVal = this.options.type === 'overlap' ? this.el.offsetWidth + levelFactor : this.el.offsetWidth;
-			
+
 			this._setTransform( 'translate3d(' + translateVal + 'px,0,0)' );
 
 			if( subLevel ) {

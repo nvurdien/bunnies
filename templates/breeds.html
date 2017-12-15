@@ -7,6 +7,8 @@
   </div>
 </div>
 <div class="col col-10 push-middle push-center">
+  <button class="button outline" id="openAll">Open All</button>
+  <button class="button outline" id="closeAll">Close All</button>
   <div id="my-collapse-api" class="my-collapse" data-component="collapse" data-loaded="true">
         <h4><a href="#collapse-box-1" class="collapse-toggle" rel="#collapse-box-1">Item 1</a></h4>
         <div class="collapse-box open" id="collapse-box-1" style="">
@@ -70,5 +72,18 @@
         </div>
     </div>
 </div>
-
+<script>
+  new Kube.Tabs(document.getElementById('livetabs1'));
+  new Kube.Tabs(document.getElementById('livetabs2'));
+  new Kube.Tabs(document.getElementById('livetabs3'));
+  new Kube.Collapse(document.getElementById('my-collapse-api'));
+  $('#openAll').on('click', function(){
+    $('.collapse-box').addClass('open');
+    $('.collapse-box').removeClass('hide');
+  });
+  $('#closeAll').on('click', function(){
+    $('.collapse-box').addClass('hide');
+    $('.collapse-box').removeClass('open');
+  });
+</script>
 {% endblock %}

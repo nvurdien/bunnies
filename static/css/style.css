@@ -181,3 +181,15 @@ header a {
   vertical-align: top;
   display: inline-block;
 }
+
+#closeNav {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 2em;
+
+}
+#closeNav:hover {
+  color: #f03c69;
+}

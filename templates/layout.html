@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
-    <script src="js/kube.min.js"></script>
+    <script src="js/kube.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/mlpushmenu.js"></script>
     <title>Bunny-Net</title><!--Title of the page usually appears on tab-->
@@ -23,6 +23,7 @@
 			<div class="mp-pusher" id="mp-pusher">
         <nav id="mp-menu" class="mp-menu">
 					<div class="mp-level">
+            <span class="close big" id="closeNav"></span>
 						<ul>
 							<li><a href="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a></li>
 							<li><a href="/about"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; About</a></li>
@@ -54,11 +55,6 @@
     </div>
   </body>
   <script>
-    new mlPushMenu(document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ));
-    new Kube.Tabs(document.getElementById('livetabs1'));
-    new Kube.Tabs(document.getElementById('livetabs2'));
-    new Kube.Tabs(document.getElementById('livetabs3'));
-    new Kube.Collapse(document.getElementById('my-collapse-api'));
-    
+    new mlPushMenu(document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ), document.getElementById('closeNav'));
   </script>
 </html>
