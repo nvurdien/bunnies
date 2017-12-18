@@ -72,17 +72,34 @@ h1{
 
 header {
   padding-top: 10px;
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  background-color: rgba(30, 32, 35, 0.9);
-  color: white;
+  background-color: transparent;
+  color: #fff;
   position: fixed;
   width: 100%;
   z-index: 1;
+  transition: all 0.5s ease-in-out;
+  top:0;
 }
+
+#headernavbar p{
+  padding-bottom: 0px;
+}
+
+#headernavbar:hover {
+  padding-bottom: 10px;
+  background-color: rgba(30, 32, 35, 0.9);
+  transition: all 0.5s ease-in-out;
+}
+
 
 header #brand-name {
   font-weight: bolder;
+  color: white;
   text-shadow: 2px 4px 1px #000000;
+}
+
+header #brand-name a:hover {
+  color: white;
 }
 
 header a {
@@ -90,13 +107,9 @@ header a {
   text-shadow: 2px 4px 4px #000000;
 }
 
-
-#footer{
-  display: block;
-  width: 100%;
-  border-top: 1px solid rgba(0,0,0,.1);
-  bottom: 0px;
-  position: absolute;
+header #navigation {
+  padding-top: 6px;
+  font-size: 12px;
 }
 
 .mp-level {
