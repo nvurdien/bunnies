@@ -1,14 +1,14 @@
 use rabbits;
 
 CREATE TABLE IF NOT EXISTS image (
-    hash binary(16) NOT NULL,
-    fullpath VARCHAR(32) NOT NULL,
+    uuid INT(64) UNSIGNED NOT NULL,
+    fullpath VARCHAR(64) NOT NULL,
     time TIMESTAMP,
-    PRIMARY KEY (hash)
+    PRIMARY KEY (uuid)
 );
 
 CREATE TABLE IF NOT EXISTS breed (
-    hash binary(16) NOT NULL,
+    uuid INT(64) UNSIGNED NOT NULL,
     name VARCHAR(32) NOT NULL,
-    PRIMARY KEY (hash)
+    PRIMARY KEY (uuid)
 );
