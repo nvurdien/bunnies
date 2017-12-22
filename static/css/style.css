@@ -4,7 +4,25 @@
     font-size: 1.8em;
     line-height: 1.5;
 }
+
+.flashes {
+    margin:0px;
+    list-style-type:none;
+    margin-bottom: 10px;
+}
+
+.success {
+    width:100%;
+    background-color: rgba(53, 190, 177, 0.1);
+    border: 1px solid #6ad5cb;
+    color:#35beb1;
+    list-style-type:none;
+    padding: 10px;
+}
+
 body {
+    margin: 0;
+    padding: 0;
     color: #000;
     font-weight: 300;
     font-family: 'Lato', Calibri, Arial, sans-serif;

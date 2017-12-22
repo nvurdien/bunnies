@@ -2,17 +2,31 @@
 {% block body %}
 <div class="jumbotron text-center">
   <div class="overlay">
-    <h1>About Us</h1>
+    <h1>Upload a BunBun</h1>
     <p>Yay!</p>
-    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="photo" id="fileToUpload">
-    {{ recaptcha }}
-    <input type="submit" value="Upload Image" name="submit">
+ </div>
+</div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %} 
+<div class="w100 w100-sm text-center">
+  <div class="col col-11 push-center">
+    <form id="upload-form" method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}" style="margin-left:10%; margin-right:10%;">
+        <label>Breed:</label>
+        <input type="text" name="breed" placeholder="Lop" required>
+        <label>Select an image to upload:</label>
+        <input type="file" name="file" accept="image/*" required>
+        {{ recaptcha }}
+        <BR><BR><BR>
+        <input class="button outline" type="submit" value="Submit">
     </form>
   </div>
 </div>
-<div class="w100 w100-sm push-middle push-center text-center">
 
-</div>
 {% endblock %}
