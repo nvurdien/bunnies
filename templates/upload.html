@@ -18,12 +18,17 @@
 <div class="w100 w100-sm text-center">
   <div class="col col-11 push-center">
     <form id="upload-form" method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}" style="margin-left:10%; margin-right:10%;">
-        <label>Breed:</label>
-        <input type="text" name="breed" placeholder="Lop" required>
-        <label>Select an image to upload:</label>
-        <input type="file" name="file" accept="image/*" required>
+        <div class="form-item push-center">
+            <label>Breed <span class="req">*</span></label>
+            <input type="text" class="w50 push-center" name="breed" placeholder="Lop" required>
+        </div>
+        <div class="form-item">
+            <label>Select an image to upload <span class="req">*</span>
+            <input type="file" class="w50" name="file" accept="image/*" required>
+            </label>
+        </div>
         {{ recaptcha }}
-        <BR><BR><BR>
+        <BR><BR>
         <input class="button outline" type="submit" value="Submit">
     </form>
   </div>
