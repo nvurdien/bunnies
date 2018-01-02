@@ -20,6 +20,15 @@
     padding: 10px;
 }
 
+.error {
+    width:100%;
+    background-color: rgba(240, 60, 105, 0.1);
+    border: 1px solid #f583a0;
+    color:#f583a0;
+    list-style-type:none;
+    padding: 10px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -140,6 +149,14 @@ header #navigation {
 
 .mp-level a:hover {
   color: #f03c69;
+}
+
+.button {
+  background-color: steelblue;
+}
+
+.button:hover {
+  background-color: #f03c69;
 }
 
 .button.outline {

@@ -6,32 +6,33 @@
     <p>Yay!</p>
  </div>
 </div>
-{% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <ul class=flashes>
-            {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %} 
 <div class="w100 w100-sm text-center">
   <div class="col col-11 push-center">
     <form id="upload-form" method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}" style="margin-left:10%; margin-right:10%;">
+      <div class="form-item push-center w50">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              <ul class=flashes>
+                  {% for category, message in messages %}
+                      <li class="{{ category }}">{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+      {% endwith %}
+      </div>
         <div class="form-item push-center">
             <label>Breed <span class="req">*</span></label>
             <input type="text" class="w50 push-center" name="breed" placeholder="Lop" required>
         </div>
         <div class="form-item">
-            <label>Select an image to upload <span class="req">*</span>
-            <input type="file" class="w50" name="file" accept="image/*" required>
-            </label>
+            <input type="file" name="file" id="file" class="inputfile inputfile-6" data-multiple-caption="{count} files selected" accept="image/*" required />
+  					<label for="file"><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> Choose a file&hellip;</strong></label>
+
         </div>
         {{ recaptcha }}
-        <BR><BR>
-        <input class="button outline" type="submit" value="Submit">
+        <input class="button" type="submit" value="Submit">
     </form>
   </div>
 </div>
-
+<script src="js/jquery.custom-file-input.js"></script>
 {% endblock %}
