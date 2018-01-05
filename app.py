@@ -21,14 +21,13 @@ app.config['POSTGRESQL_DATABASE_HOST'] = hostname
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://'+user+':'+passwd+'@'+hostname+':'+port+'/'+db_name
 db = SQLAlchemy(app)
 
-from models import Breed, Image
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/breeds')
 def breeds():
+    from models import Breed
     rabbits = Breed.query.all();
     return render_template('breeds.html', rabbits=rabbits)
 
@@ -38,6 +37,7 @@ def about():
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
+    from models import Breed, Image
     if request.method == 'POST':
         target = os.path.join(APP_ROOT, 'data')
         print(target)
@@ -63,7 +63,6 @@ def upload():
             db.session.add(picture)
             db.session.commit()
         except:
-            errors.append("Unable to add item to database.")
             flash('Not added to Database', 'error')
         flash('Successfully Uploaded Image', 'success')
         return redirect(url_for('upload'))

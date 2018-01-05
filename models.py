@@ -3,11 +3,9 @@ from uuid import uuid4
 import datetime
 from sqlalchemy.dialects.postgresql import JSON
 from sqlalchemy.dialects.postgresql.base import UUID
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import *
 from sqlalchemy.dialects.mysql.base import MSBinary
 from sqlalchemy.orm import mapper
-from sqlalchemy.schema import Column
+from sqlalchemy.schema import Column, Table
 
 db.UUID = UUID
 
@@ -15,7 +13,6 @@ class Breed(db.Model):
     __tablename__ = 'breed'
     id = db.Column(db.UUID(as_uuid=True),primary_key=True,default=uuid4())
     name = db.Column('name', db.String(32))
-    images = db.relationship('image', backref='breed', lazy = True)
     def __init__(self, name):
         self.name = name
 
