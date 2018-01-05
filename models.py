@@ -31,3 +31,13 @@ class Image(db.Model):
         self.fullpath = fullpath
         self.breed = breed
         self.time = datetime.datetime.now()
+
+class Example_Breed(db.Model):
+    __tablename__='example_breed'
+    breed = db.Column('breed', db.String, primary_key=True)
+    path = db.Column('picture_path', db.String)
+    desc = db.Column('desc', db.Text)
+    def __init__(self, breed, path, desc):
+        self.breed = breed
+        self.path = path
+        self.desc = desc

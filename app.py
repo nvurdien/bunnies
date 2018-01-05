@@ -18,6 +18,7 @@ app.config['POSTGRESQL_DATABASE_USER'] = user
 app.config['POSTGRESQL_DATABASE_PASSWORD'] = passwd
 app.config['POSTGRESQL_DATABASE_DB'] = db_name
 app.config['POSTGRESQL_DATABASE_HOST'] = hostname
+port = str(5432)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://'+user+':'+passwd+'@'+hostname+':'+port+'/'+db_name
 db = SQLAlchemy(app)
 
