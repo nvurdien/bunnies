@@ -13,6 +13,7 @@ app = Flask(__name__, static_url_path='')
 flask_uuid.init_app(app)
 app.secret_key = 's000 secret!'
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.config['POSTGRESQL_DATABASE_USER'] = user
 app.config['POSTGRESQL_DATABASE_PASSWORD'] = passwd
@@ -22,7 +23,7 @@ port = str(5432)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://'+user+':'+passwd+'@'+hostname+':'+port+'/'+db_name
 db = SQLAlchemy(app)
 
-from models import Breed, Image
+from models import *
 
 @app.route('/')
 def index():
@@ -30,7 +31,7 @@ def index():
 
 @app.route('/breeds')
 def breeds():
-    rabbits = Breed.query.all();
+    rabbits = models.Breed.query.all();
     return render_template('breeds.html', rabbits=rabbits)
 
 @app.route('/about')
@@ -58,7 +59,7 @@ def upload():
         try:
             picture = Image(
             idcode = idcode,
-            breed = Breed.query.filter_by(name=name).first(),
+            breed = models.Breed.query.filter_by(name=name).first(),
             fullpath = destination
             )
             db.session.add(picture)

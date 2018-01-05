@@ -1,5 +1,5 @@
-from app import db
 from uuid import uuid4
+from app import db
 import datetime
 from sqlalchemy.dialects.postgresql import JSON
 from sqlalchemy.dialects.postgresql.base import UUID
